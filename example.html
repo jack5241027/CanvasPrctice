@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <canvas id="a_canvas" width="200" height="150"></canvas>
+    <script type="text/javascript">
+    var canvas = document.getElementById("a_canvas");
+    var ctx = canvas.getContext("2d");
+
+    function drawRect(context, color) {
+        context.fillStyle = color;
+        context.fillRect(0, 0, 100, 30);
+    }
+
+    function rotateDeg(context, deg) {
+        var rad = deg * Math.PI / 180;
+        context.rotate(rad);
+    }
+
+    drawRect(ctx, "red");
+    ctx.translate(100, 30);
+    rotateDeg(ctx, 90);
+    drawRect(ctx, "blue");
+    rotateDeg(ctx, 45);
+    ctx.translate(20, -100);
+    drawRect(ctx, "green");
+
+    // drawRect(ctx, "red");
+    // ctx.save();
+    // ctx.translate(100, 30);
+    // rotateDeg(ctx, 45);
+    // drawRect(ctx, "blue");
+    // ctx.restore();
+    // ctx.translate(200, 50);
+    // rotateDeg(ctx, 90);
+    // drawRect(ctx, "green");
+    </script>
+</body>
+
+</html>

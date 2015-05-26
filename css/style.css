@@ -1,0 +1,1910 @@
+@charset "utf-8";
+/**
+ * Style Less
+ *
+ * @package   charset, global, section
+ * @author    kiiiick Jay
+ * @copyright Copyright (C) KICKcreative Co., All Rights Reserved.
+ * @license   dev 1.0
+ * @link    http://www.kiiiick.com/
+ * 
+ **/
+/*------------------------------------*\
+    $CHARSET
+\*------------------------------------*/
+/*------------------------------------*\
+    $IMPORT GLOBAL
+\*------------------------------------*/
+
+html {
+    color: #000;
+    background: #FFF;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+del,
+ins {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+sup {
+    vertical-align: baseline;
+}
+
+sub {
+    vertical-align: baseline;
+}
+/*because legend doesn't inherit in IE */
+
+legend {
+    color: #000;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+
+input,
+button,
+textarea,
+select {
+    *font-size: 100%;
+}
+/*Remove button padding in FF*/
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+/* fix ios can't styleing */
+
+input[type="submit"],
+input[type="button"] {
+    -webkit-appearance: none;
+}
+/* remove webkit focus outline */
+
+a,
+input,
+textarea {
+    outline: none;
+}
+/* remove webkit textarea resize event */
+
+textarea {
+    resize: none;
+}
+/* html5 element fix */
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+/**
+ * Function Less
+ *
+ * @package   charset, global, section
+ * @author    KiiiiCK Jay
+ * @copyright Copyright (C) KiiiiCK Co., All Rights Reserved.
+ * @license   dev 1.0
+ * @link    http://www.kiiiick.com/
+ * 
+ **/
+/*------------------------------------*\
+    $FROM BOOTSTRAP
+\*------------------------------------*/
+
+.cover {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    behavior: url("../css/backgroundsize.min.htc");
+}
+
+.hide-text {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    /* Fixes Opera/contenteditable bug: */
+    /* http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952 */
+    
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.box_sizeing {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*------------------------------------*\
+    $FROM BOOTSTRAP CSS3 PROPERTIES
+\*------------------------------------*/
+/* Border Radius */
+/* Single Corner Border Radius */
+/* Single Side Border Radius */
+/* Gradients */
+/* Transitions */
+/* Transformations */
+/*------------------------------------*\
+    $FROM KIIIICK JAY
+\*------------------------------------*/
+/*------------------------------------*\
+    $FROM KiiiiCK HOM
+\*------------------------------------*/
+/* sprite */
+/* alpha */
+/* box shadow */
+/* font */
+
+.FUNC_debug {
+    border-top: 1px red solid;
+    border-bottom: 1px red solid;
+}
+
+.FUNC_debug * {
+    border-top: 1px red solid;
+    border-bottom: 1px red solid;
+}
+
+.fL {
+    float: left;
+}
+
+.fR {
+    float: right;
+}
+
+.br {
+    clear: both;
+}
+
+.aC {
+    text-align: center;
+}
+
+.aL {
+    text-align: left;
+}
+
+.aR {
+    text-align: right;
+}
+
+.vaT {
+    vertical-align: top;
+}
+
+.vaM {
+    vertical-align: middle;
+}
+
+.vaB {
+    vertical-align: bottom;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.custom_v,
+.custom_h,
+.custom_menu,
+.custom_content,
+.custom_nav {
+    margin-left: 0;
+}
+
+.custom_v li,
+.custom_h li,
+.custom_menu li,
+.custom_content li,
+.custom_nav li {
+    list-style: none;
+}
+
+ol.custom_v li {
+    list-style: decimal-leading-zero;
+}
+
+.custom_h li,
+.custom_h dt,
+.custom_h dd,
+.custom_content li,
+.custom_content dt,
+.custom_content dd,
+.custom_nav li,
+.custom_nav dt,
+.custom_nav dd {
+    float: left;
+}
+
+.custom_v li,
+.custom_v dt,
+.custom_v dd,
+.custom_menu li,
+.custom_menu dt,
+.custom_menu dd {
+    float: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-size: 15px;
+    color: #333333;
+    font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    overflow-y: scroll;
+}
+
+.wrapper {
+    width: 100%;
+    min-width: 1000px;
+    position: relative;
+    top: 0;
+    min-height: 100%;
+}
+
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 50px;
+    overflow: auto;
+}
+/*------------------------------------*\
+    $COMMON GLOBAL
+\*------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #886432;
+}
+
+.btn {
+    background: #ff0;
+    border: 1px solid #aa9b61;
+    display: block;
+    border-radius: 10px;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #886432;
+}
+
+.radius-corner {
+    border-radius: 10px;
+}
+/*------------------------------------*\
+    Layout
+\*------------------------------------*/
+
+.deco-sticker {
+    width: 137px;
+    height: 47px;
+    display: block;
+    position: absolute;
+    background: url("../img/paper_tape.png");
+    z-index: 20;
+    margin: -19px 0 0 12px;
+}
+
+.deco-logo_name {
+    width: 84px;
+    height: 51px;
+    display: block;
+    background: url("../img/logo_name.png");
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 15px 25px 0;
+}
+
+#banner-big {
+    width: 660px;
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+}
+
+#banner-small {
+    width: 265px;
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+}
+
+#bottles,
+#customBottles {
+    font-size: 0;
+    text-align: left;
+    width: 100%;
+    clear: both;
+    margin-left: 20px;
+}
+
+#bottles img,
+#customBottles img {
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    width: 170px;
+    height: 265px;
+}
+
+#bottles li,
+#customBottles li {
+    font-size: 0;
+    display: inline-block;
+    width: 170px;
+    height: 265px;
+    margin: 0 11px 15px 11px;
+}
+
+.popup {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    background: url("../img/notice_bg.png") repeat;
+}
+
+.popup-content {
+    width: 560px;
+    height: 310px;
+    background: #ffdccd;
+    border-radius: 10px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 50px;
+}
+
+.popup-content .btn-close {
+    width: 38px;
+    height: 38px;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    background: url("../img/btn-close.png") no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px 10px 0 0;
+}
+
+.popup-content .btn-close:hover {
+    background-position: bottom;
+}
+
+.popup-content .deco-tape_up {
+    width: 134px;
+    height: 41px;
+    display: block;
+    background: url("../img/paper_tape_2.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -15px 0 0 425px;
+}
+
+.popup-content .deco-tape_down {
+    width: 134px;
+    height: 41px;
+    display: block;
+    background: url("../img/paper_tape_3.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 350px 0 0 280px;
+}
+
+.popup-content .deco-tape_left {
+    width: 122px;
+    height: 49px;
+    display: block;
+    background: url("../img/paper_tape_4.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 275px 0 0 -20px;
+}
+
+#channel .popup-content {
+    width: 880px;
+    height: 400px;
+    background: #faf7f1 url("../img/popup_corner.jpg") no-repeat right bottom;
+}
+
+#channel .popup-content h2 {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    background: url("../img/sticker_title_bg.png") no-repeat center center;
+}
+
+#channel .popup-content ul {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 0 8px;
+}
+
+#channel .popup-content li {
+    width: 250px;
+    height: 310px;
+    border-right: 1px solid #959494;
+    border-bottom: 1px solid #959494;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+}
+
+#channel .popup-content li .detail {
+    width: 240px;
+    height: 310px;
+    border: 1px solid #959494;
+    margin: -8px 0 0 -8px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+#channel .popup-content li .detail * {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+#channel .popup-content li .detail img {
+    width: auto;
+    margin: 0 auto;
+}
+
+#channel .popup-content li .detail .mag-name {
+    height: 45px;
+    border-bottom: 1px solid #959494;
+}
+
+#channel .popup-content li .detail .mag-name.mag1 {
+    background: url("../img/sticker_mag_1.png") no-repeat center center;
+}
+
+#channel .popup-content li .detail .mag-name.mag2 {
+    background: url("../img/sticker_mag_2.png") no-repeat center center;
+}
+
+#channel .popup-content li .detail .mag-name.mag3 {
+    background: url("../img/sticker_mag_3.png") no-repeat center center;
+}
+
+#channel .popup-content li .detail h3 {
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#channel .popup-content li .detail em {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid #959494;
+}
+
+#channel .popup-content li .detail .limit {
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #886432;
+}
+
+#channel .popup-content li .detail .store {
+    height: 25px;
+    line-height: 13px;
+    font-size: 16px;
+    border-bottom: 1px solid #959494;
+}
+
+#channel .popup-content li .detail .ps {
+    height: 30px;
+    line-height: 28px;
+    font-size: 11px;
+    color: #666;
+}
+
+#channel .popup-content .more {
+    margin: 5px 0 0 60px;
+}
+
+#channel .popup-content .more span {
+    font-size: 13px;
+    line-height: 18px;
+    vertical-align: top;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+#channel .popup-content .more img {
+    vertical-align: top;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.mCSB_scrollTools {
+    width: 30px !important;
+    height: 275px !important;
+    margin-top: 25px;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    width: 5px !important;
+}
+
+.mCS-dark.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #000000 !important;
+}
+
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #ffff00 !important;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 5px !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+/*------------------------------------*\
+    $IMPORT SECTION
+\*------------------------------------*/
+/*-----------------------------------------------------------------------------*\
+NAV
+\*-----------------------------------------------------------------------------*/
+
+.header {
+    width: 100%;
+    height: 160px;
+    background: #fff;
+}
+
+.header .nav {
+    width: 1000px;
+    height: 160px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.header h1 {
+    display: inline-block;
+    float: left;
+    margin: 10px 0 0 8px;
+}
+
+.header h1 a {
+    display: block;
+    width: 288px;
+    height: 126px;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    background: url("../img/logo.png") no-repeat;
+}
+
+.header ul {
+    width: auto;
+    height: 50px;
+    display: inline-block;
+    float: right;
+    margin: 65px 30px 0 0;
+    background: url("../img/nav_line.png") no-repeat bottom right;
+}
+
+.header ul li {
+    display: inline-block;
+    float: left;
+    margin: 0 26px 0 12px;
+}
+
+.header ul li:first-child {
+    margin: 0;
+}
+
+.header ul li a {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    display: block;
+    width: 109px;
+    height: 39px;
+    background-repeat: no-repeat;
+}
+
+.header ul li a:hover {
+    background-position: bottom;
+}
+
+.header ul li a.actived {
+    background-position: bottom;
+    cursor: default;
+}
+
+.header ul li a.home {
+    width: 24px;
+    height: 50px;
+    background-image: url("../img/nav_0.png");
+}
+
+.header ul li a.sticker {
+    background-image: url("../img/nav_1.png");
+}
+
+.header ul li a.story {
+    background-image: url("../img/nav_2.png");
+}
+
+.header ul li a.upload {
+    background-image: url("../img/nav_3.png");
+}
+
+.header ul li a.online {
+    background-image: url("../img/nav_4.png");
+}
+
+.header .fb-like {
+    float: right;
+    width: 125px;
+    margin-top: -100px;
+    overflow: hidden;
+}
+
+.header .fb-like-box {
+    display: block;
+    margin: -33px 0 0 -65px;
+}
+/*-----------------------------------------------------------------------------*\
+Home
+\*-----------------------------------------------------------------------------*/
+
+#home .content {
+    overflow: visible;
+}
+
+#home .deco-sticker {
+    position: absolute;
+    margin: -19px 0 0 12px;
+}
+
+#home #banner-big img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#home .owl-controls {
+    position: relative;
+    z-index: 8;
+    padding: 5px 0;
+}
+
+#home .owl-controls .owl-pagination {
+    text-align: right;
+}
+
+#home .owl-theme .owl-controls .owl-page span {
+    background: #a2a0a0;
+    width: 8px;
+    height: 8px;
+}
+
+#home .owl-theme .owl-controls .owl-page.active span {
+    background: #d3ab71;
+}
+
+#home #banner-small {
+    height: 370px;
+}
+
+#home #banner-small li {
+    width: 265px;
+    height: 105px;
+    margin-top: 10px;
+}
+
+#home #banner-small li:first-child {
+    height: 25px;
+    margin-top: 0;
+}
+
+#home #banner-small a {
+    border-radius: 10px;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 265px;
+    height: 105px;
+    display: block;
+    overflow: hidden;
+}
+
+#home #banner-small a.btn-channel {
+    height: 25px;
+    background: url("../img/banner/banner_small_1.png") no-repeat;
+}
+
+#home #banner-small a.online {
+    background: url("../img/banner/banner_small_2.jpg") no-repeat;
+}
+
+#home #banner-small a.upload {
+    background: url("../img/banner/banner_small_3.jpg") no-repeat;
+}
+
+#home #banner-small a.btn-play {
+    background: url("../img/banner/banner_small_4.jpg") no-repeat;
+}
+
+#home #banner-small a:hover {
+    background-position: bottom;
+}
+
+#intro .popup-content {
+    width: 980px;
+    height: 500px;
+    padding: 0;
+}
+
+#intro .popup-content .btn-close {
+    width: 42px;
+    height: 42px;
+    background: url("../img/btn-close-2.png") no-repeat;
+    margin: -15px -15px 0 0;
+}
+/*-----------------------------------------------------------------------------*\
+sticker
+\*-----------------------------------------------------------------------------*/
+
+#sticker {
+    width: 100%;
+    background: url("../img/pattern_bg.jpg");
+}
+
+#sticker .content {
+    color: #3e3a39;
+    text-align: center;
+}
+
+#sticker .btn-channel {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 265px;
+    height: 25px;
+    display: block;
+    overflow: hidden;
+    background: url("../img/banner/banner_small_1.png") no-repeat;
+    float: right;
+    margin-top: 30px;
+}
+
+#sticker .btn-channel:hover {
+    background-position: bottom;
+}
+
+#sticker .sticker-author {
+    width: 780px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#sticker .sticker-author h2 {
+    width: 100%;
+    background: url("../img/sticker_title_line.png") no-repeat center center;
+    color: #240100;
+    font-size: 20px;
+    margin-top: 50px;
+    text-indent: 12px;
+}
+
+#sticker .sticker-author h2 span {
+    color: #ed5900;
+}
+
+#sticker .sticker-author em {
+    color: #240100;
+    font-size: 24px;
+    margin-top: 20px;
+    display: block;
+}
+
+#sticker .sticker-author p {
+    text-align: left;
+    line-height: 28px;
+    margin: 10px 0;
+}
+
+#sticker .sticker-author .stickers {
+    overflow: auto;
+}
+
+#sticker .sticker-author .stickers img {
+    border: 1px solid #dedede;
+}
+
+#sticker .sticker-author .stickers .sticker-l {
+    float: left;
+}
+
+#sticker .sticker-author .stickers .sticker-r {
+    float: right;
+}
+
+#sticker .sticker-author .author {
+    clear: both;
+    display: block;
+    padding: 15px;
+    text-align: left;
+    background: url("../img/pattern_bg_dark.jpg");
+    margin-top: 15px;
+    overflow: auto;
+}
+
+#sticker .sticker-author .author img {
+    float: left;
+    margin-right: 20px;
+}
+
+#sticker .sticker-author .author h3 {
+    color: #240100;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+#sticker .sticker-author .author p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+}
+/*-----------------------------------------------------------------------------*\
+story
+\*-----------------------------------------------------------------------------*/
+
+#story {
+    width: 100%;
+    background: url("../img/pattern_bg.jpg");
+}
+
+#story h2 {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    height: 50px;
+    background: url("../img/story_title.png") no-repeat center center;
+    margin: 35px 0;
+}
+
+#story .story-list {
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+}
+
+#story .story-list li {
+    display: inline-block;
+    margin: 25px;
+}
+
+#story .story-list .border {
+    width: 250px;
+    height: 250px;
+    border-right: 1px solid #909090;
+    border-bottom: 1px solid #909090;
+}
+
+#story .story-list div,
+#story .story-list .thumb {
+    margin: -10px 0 0 -10px;
+}
+
+#story .story-list .thumb {
+    width: 230px;
+    height: 230px;
+    display: block;
+    padding: 10px;
+    border: 1px solid #909090;
+    background: url("../img/pattern_bg_light.jpg");
+    position: absolute;
+    margin: -10px 0 0 -10px;
+}
+
+#story .story-list .thumb:hover .read {
+    background-position: bottom;
+}
+
+#story .story-list .thumb img {
+    width: 100%;
+}
+
+#story .story-list .thumb h3 {
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 8px;
+    overflow: hidden;
+    text-align: left;
+    background: none;
+}
+
+#story .story-list .thumb .read {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 49px;
+    height: 23px;
+    display: block;
+    background: url("../img/story_read.png") no-repeat;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 10px 10px 0;
+}
+
+#story .story-list .thumb .wait {
+    display: inline-block;
+    padding-top: 20px;
+    background: url("../img/story_wait.png") no-repeat top center;
+    margin-top: 100px;
+}
+
+#storyDetail {
+    width: 100%;
+    background: url("../img/pattern_bg.jpg");
+}
+
+#storyDetail h2 {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    height: 50px;
+    background: url("../img/story_title.png") no-repeat center center;
+    margin: 35px 0;
+}
+
+#storyDetail .switcher {
+    display: inline-block;
+    float: right;
+    margin: -50px 100px 0 0;
+}
+
+#storyDetail .switcher a {
+    margin-left: 20px;
+}
+
+#storyDetail .switcher.footer {
+    margin-top: 50px;
+}
+
+#storyDetail h3 {
+    width: 800px;
+    height: 45px;
+    margin: 0 auto;
+    line-height: 45px;
+    background: url("../img/story_title_bg.png") no-repeat;
+    font-size: 18px;
+    font: bold;
+    color: #313134;
+    text-align: center;
+}
+
+#storyDetail .article {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#storyDetail .article img {
+    margin: 10px 0 10px;
+}
+
+#storyDetail .article .icon-arr {
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    font-size: 24px;
+    line-height: 22px;
+}
+
+#storyDetail .article .param {
+    display: inline-block;
+    vertical-align: top;
+    width: 770px;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+
+#storyDetail .article .two {
+    display: inline-block;
+    width: 380px;
+}
+
+#storyDetail .article .two.right {
+    margin-left: 31px;
+}
+
+#storyDetail .article .three {
+    display: inline-block;
+    width: 245px;
+}
+
+#storyDetail .article .three.center {
+    margin: 0px 28px;
+}
+
+#storyDetail .article .three .param {
+    width: 100%;
+}
+
+#storyDetail em {
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    height: 15px;
+    margin-top: -22px;
+    right: 110px;
+    float: right;
+}
+
+#storyDetail em.copy_1 {
+    background: url("../img/copy_1.png") no-repeat right;
+}
+
+#storyDetail em.copy_2 {
+    background: url("../img/copy_1.png") no-repeat right;
+}
+
+#storyDetail em.copy_3 {
+    background: url("../img/copy_1.png") no-repeat right;
+}
+
+#storyDetail em.copy_4 {
+    background: url("../img/copy_4.png") no-repeat right;
+}
+
+#storyDetail em.copy_5 {
+    background: url("../img/copy_5.png") no-repeat right;
+}
+
+#storyDetail em.copy_6 {
+    background: url("../img/copy_6.png") no-repeat right;
+}
+
+#storyDetail em.copy_7 {
+    background: url("../img/copy_6.png") no-repeat right;
+}
+/*-----------------------------------------------------------------------------*\
+upload
+\*-----------------------------------------------------------------------------*/
+
+#upload .content {
+    overflow: visible;
+}
+
+#upload .btn-award {
+    position: absolute;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #d40000;
+    top: 189px;
+    left: 230px;
+    font-weight: bold;
+}
+
+#upload .btn-award:hover {
+    color: #ff4e4e;
+}
+
+#upload #banner-big {
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/banner/banner_upload_big.jpg") no-repeat;
+    border: 1px solid #f3f3f3;
+    border-radius: 10px;
+    height: 250px;
+}
+
+#upload #banner-big a {
+    display: block;
+    margin: 45px 0 0 565px;
+    text-decoration: underline;
+    font-size: 15px;
+    color: #ed5900;
+}
+
+#upload #banner-big a:hover {
+    color: #886432;
+}
+
+#upload #banner-big .award-thumb {
+    width: 90px;
+    color: #000;
+    margin: 85px 0 0 480px;
+    text-align: center;
+    font-size: 13px;
+}
+
+#upload #banner-big .award-thumb img {
+    border: 1px solid #666;
+}
+
+#upload #banner-small {
+    height: 250px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 10px;
+    background: #ffdccd;
+}
+
+#upload #banner-small img {
+    width: 92%;
+    margin-top: 4%;
+}
+
+#upload #banner-small:hover img {
+    width: 96%;
+    margin-top: 2%;
+}
+
+#upload .gallery-title {
+    letter-spacing: 8px;
+    clear: both;
+    text-align: left;
+    padding: 15px 0 15px 30px;
+    font-weight: bold;
+}
+
+#upload #customBottles li {
+    cursor: pointer;
+}
+
+#upload #notice .popup-content {
+    padding-right: 15px;
+}
+
+#upload #notice .popup-content .notice-detail {
+    width: 100%;
+    height: 300px;
+}
+
+#upload #notice .popup-content .mCSB_scrollTools {
+    height: 220px !important;
+    margin-top: 30px;
+}
+
+#upload #notice .popup-content h2 {
+    width: 510px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#upload #notice .popup-content p {
+    width: 510px;
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 5px;
+}
+
+#upload #notice .popup-content ul {
+    width: 510px;
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 5px;
+}
+
+#upload #notice .popup-content ul ul li {
+    text-indent: 10px;
+}
+
+#upload #award img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+#upload #award-list .award-detail {
+    width: 100%;
+    height: 280px;
+}
+
+#upload #award-list h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#upload #award-list p {
+    line-height: 28px;
+    font-size: 12px;
+}
+
+#upload #award-list span {
+    margin-left: 20px;
+}
+
+#upload #gallery .popup-content,
+#upload #customGallery .popup-content {
+    font-weight: bold;
+}
+
+#upload #gallery .popup-content img,
+#upload #customGallery .popup-content img {
+    border-radius: 10px;
+    width: 220px;
+    height: 330px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -35px 0 0 30px;
+}
+
+#upload #gallery .popup-content .to,
+#upload #customGallery .popup-content .to {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 40px 0 0 270px;
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+
+#upload #gallery .popup-content .name,
+#upload #customGallery .popup-content .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 40px 0 0 350px;
+    font-size: 18px;
+    letter-spacing: 10px;
+}
+
+#upload #gallery .popup-content p,
+#upload #customGallery .popup-content p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 120px 0 0 280px;
+    font-size: 16px;
+    width: 280px;
+    height: 180px;
+    overflow: hidden;
+    line-height: 32px;
+    letter-spacing: 7px;
+}
+
+#upload #gallery .popup-content .from,
+#upload #customGallery .popup-content .from {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 310px 50px 0 0;
+    font-size: 16px;
+    letter-spacing: 10px;
+}
+
+#upload #gallery .popup-content .deco-logo_name,
+#upload #customGallery .popup-content .deco-logo_name {
+    width: 84px;
+    height: 51px;
+    display: block;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/logo_name.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 307px 0 0 155px;
+}
+
+#upload #privacy .popup-content p {
+    line-height: 32px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+#upload #privacy .popup-content span {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#upload #privacy .popup-content .btn-agree {
+    width: 120px;
+    margin: 20px auto 0 auto;
+}
+
+#upload #form .popup-content {
+    width: 936px;
+    height: 460px;
+    padding: 0;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/form_bg.png") no-repeat;
+    border-radius: 0;
+}
+
+#upload #form .popup-content .btn-close {
+    margin: 20px 20px 0 0;
+}
+
+#upload #form .popup-content .photo-editor {
+    position: absolute;
+    margin: 35px 0 0 100px;
+    text-align: center;
+}
+
+#upload #form .popup-content .photo-editor p {
+    width: 212px;
+    font-size: 12px;
+}
+
+#upload #form .popup-content h2 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#upload #form .popup-content .photo-box {
+    width: 220px;
+    height: 330px;
+    background: #ffffff url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/form_upload_bg.png") no-repeat center center;
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#upload #form .popup-content .photo-box img {
+    border-radius: 10px;
+}
+
+#upload #form .popup-content .re-upload {
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    margin-top: 10px;
+    border: 1px solid #999;
+    display: inline-block;
+    font-size: 13px;
+    color: #333;
+}
+
+#upload #form .popup-content .re-upload:hover {
+    background: #ff0;
+}
+
+#upload #form .popup-content table {
+    margin: 65px 0 0 345px;
+    font-size: 13px;
+}
+
+#upload #form .popup-content table th {
+    text-align: right;
+    font-weight: bold;
+    width: 80px;
+    padding-right: 10px;
+}
+
+#upload #form .popup-content table td {
+    width: 400px;
+    padding: 3px 0;
+    vertical-align: middle;
+}
+
+#upload #form .popup-content table input {
+    height: 32px;
+    width: 250px;
+    line-height: 32px;
+    padding: 0 10px;
+}
+
+#upload #form .popup-content table textarea {
+    width: 380px;
+    height: 100px;
+    padding: 0 10px;
+}
+
+#upload #form .popup-content table .ps {
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #333;
+}
+
+#upload #form .popup-content .btn-send {
+    display: inline-block;
+    float: right;
+    margin: 10px 100px 0 0;
+}
+
+#upload #form .popup-content .btn-clear {
+    display: inline-block;
+    float: right;
+    margin: 10px 10px 0 0;
+    background: #bab8b8;
+}
+
+#upload .crop-wrapper {
+    width: 912px !important;
+    height: 437px !important;
+    position: absolute;
+    margin: auto;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 12px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/form_bg.png") no-repeat;
+}
+
+#upload .cropper-container {
+    width: 912px;
+    height: 437px;
+}
+
+#upload .crop-it {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+    margin: 160px 0 0 330px;
+}
+
+#upload .rotate-it {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    margin: 90px 0 0 330px;
+    display: none;
+}
+
+#upload #uploadDone .popup-content {
+    width: 600px;
+    height: 275px;
+    text-align: center;
+}
+
+#upload #uploadDone .popup-content h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+#upload #uploadDone .popup-content p {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#upload #uploadDone .popup-content .btn-ok {
+    display: inline-block;
+    margin-top: 30px;
+}
+/*-----------------------------------------------------------------------------*\
+online
+\*-----------------------------------------------------------------------------*/
+
+{
+    width: 100%;
+    height: 100%;
+    background: #ffffff url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_content_bg.jpg") repeat-x;
+    min-height: 780px;
+}
+
+.content {
+    height: 620px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.ie8 {
+    display: none;
+}
+
+.ui {
+    position: absolute;
+    left: 50%;
+    width: 475px;
+    margin: 40px 0 0 -40px;
+    z-index: 9;
+}
+
+.ui h1 {
+    width: 100%;
+    height: 21px;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_title.png") no-repeat;
+}
+
+.ui .tab {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.ui .tab li {
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 52px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_tab_bg.png") no-repeat;
+    cursor: pointer;
+}
+
+.ui .tab li:hover,
+.ui .tab li.actived {
+    color: #886432;
+}
+
+.ui .tab li.symbol {
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_tab_bg_symbol.png") no-repeat;
+}
+
+.ui .tab li.etc {
+    width: 52px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_tab_bg_etc.png") no-repeat;
+}
+
+.ui .tab li span {
+    display: block;
+    width: 100%;
+    line-height: 20px;
+}
+
+.ui .tab li span:first-child {
+    line-height: 30px;
+}
+
+.ui .tab li .news {
+    position: absolute;
+    display: inline-block;
+    width: 33px;
+    height: 8px;
+    margin-left: -18px;
+    margin-top: -14px;
+    background: url("../img/new.png") no-repeat;
+}
+
+.ui .stickers {
+    display: block;
+    width: 100%;
+    height: 325px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.ui .stickers li {
+    width: 100%;
+    position: relative;
+}
+
+.ui .stickers li span {
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    cursor: cell;
+}
+
+.ui .stickers li span:hover img {
+    margin: 1px 0 0 1px;
+}
+
+.ui .stickers li img {
+    width: 100%;
+}
+
+.ui .btn {
+    float: right;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.ui .btn.clean {
+    background: #ccc;
+}
+
+.ui .btn-channel {
+    float: right;
+    width: 209px;
+    height: 45px;
+    display: inline-block;
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    margin-right: 20px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_get_sticker.png") no-repeat center top;
+}
+
+.ui .btn-channel:hover {
+    background-position: bottom;
+}
+
+.bottle {
+    position: absolute;
+    z-index: 8;
+    display: block;
+    width: 1000px;
+    height: 620px;
+    background: #eeeeed url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_bg.jpg") no-repeat;
+}
+
+.bottle .area {
+    display: block;
+    width: 135px;
+    height: 325px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_area_bg.png") no-repeat;
+    position: absolute;
+    margin: 180px 0 0 172px;
+}
+
+.bottle #bottleCanvas {
+    position: absolute;
+    margin: 180px 0 0 172px;
+}
+
+.bottle .tools {
+    display: block;
+    position: absolute;
+    margin: 250px 0 0 350px;
+}
+
+.bottle .tools li {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.bottle .tools li:hover {
+    background-position: bottom;
+}
+
+.bottle .tools li.scale-up {
+    margin-bottom: 5px;
+    background-image: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_scale_up.png");
+}
+
+.bottle .tools li.scale-down {
+    margin-bottom: 5px;
+    background-image: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_scale_down.png");
+}
+
+.bottle .tools li.rot-right {
+    background-image: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_rot_right.png");
+}
+
+.bottle .tools li.rot-left {
+    background-image: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_rot_left.png");
+}
+
+.bottle .tools li.delete {
+    background-image: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_delete.png");
+}
+
+.cursorMove {
+    cursor: move;
+}
+
+.finish-msg {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: 0;
+    margin: 0 0 100px 100px;
+}
+
+.finish-msg h2 {
+    font-size: 24px;
+    color: #886432;
+    letter-spacing: 5px;
+}
+
+.finish-msg p {
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.finish-msg .save {
+    width: 150px;
+}
+
+.finish-msg .re-do {
+    height: 18px;
+    display: block;
+    color: #7a7a7c;
+    font-size: 13px;
+    text-indent: 22px;
+    margin-top: 10px;
+    line-height: 18px;
+    background: url("http://drmilker-mybottlecard.com/addons/default/themes/drmilker/img/online_icon_rot_left_s.png") no-repeat left top;
+}
+
+.finish-msg .re-do:hover {
+    background-position: bottom left;
+    color: #886432;
+}
+
+.used-sticker {
+    position: absolute;
+    z-index: 11;
+    left: 50%;
+    top: 0;
+    margin: 20px 0 0 285px;
+}
+
+.used-sticker h3 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.used-sticker ul,
+.used-sticker li {
+    margin-top: 10px;
+}
