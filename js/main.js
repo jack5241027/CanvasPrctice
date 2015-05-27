@@ -25,6 +25,7 @@
      var bw;
      var bh;
 
+     init();
 
      function init() {
          drawScreen();
@@ -129,91 +130,122 @@
          }
      }
 
-     // function mouseDownListener(evt) {
-     //     evt.preventDefault();
-     //     var mousePos = getMousePos(theCanvas, evt);
-     //     mouseX = mousePos.x;
-     //     mouseY = mousePos.y;
-     //     for (var i = 0; i < numShapes; i++) {
-     //         if (hitMouseTest(shapes[i], mouseX, mouseY)) {
-     //             dragging = true;
-     //             shapes[i].selected = true;
-     //             dragIndex = i;
-     //         } else {
-     //             var tc = $(evt.target).attr('class');
-     //             if (!(tc == "scale-up" || tc == "scale-down" || tc == "rot-right" || tc == "rot-left")) {
-     //                 shapes[i].selected = false;
-     //             }
-     //         }
-     //     }
-     //     drawScreen();
-     //     if (dragging) {
-     //         $(".area").show();
-     //         shapes.push(shapes.splice(dragIndex, 1)[0]);
-     //         dragHoldX = mouseX - shapes[numShapes - 1].tx;
-     //         dragHoldY = mouseY - shapes[numShapes - 1].ty;
-     //         targetX = mouseX - dragHoldX;
-     //         targetY = mouseY - dragHoldY;
-     //         timer = setInterval(onTimerTick, 1000 / 30);
-     //     }
-     //     window.removeEventListener("mousedown", mouseDownListener, false);
-     //     window.addEventListener("mouseup", mouseUpListener, false);
-     //     theCanvas.removeEventListener("touchstart", mouseDownListener, false);
-     //     theCanvas.addEventListener("touchend", mouseUpListener, false);
+     function mouseDownListener(evt) {
+         evt.preventDefault();
+         var mousePos = getMousePos(theCanvas, evt);
+         mouseX = mousePos.x;
+         mouseY = mousePos.y;
+         for (var i = 0; i < numShapes; i++) {
+             if (hitMouseTest(shapes[i], mouseX, mouseY)) {
+                 dragging = true;
+                 shapes[i].selected = true;
+                 dragIndex = i;
+             } else {
+                 var tc = $(evt.target).attr('class');
+                 if (!(tc == "scale-up" || tc == "scale-down" || tc == "rot-right" || tc == "rot-left")) {
+                     shapes[i].selected = false;
+                 }
+             }
+         }
+         drawScreen();
+         if (dragging) {
+             $(".area").show();
+             shapes.push(shapes.splice(dragIndex, 1)[0]);
+             dragHoldX = mouseX - shapes[numShapes - 1].tx;
+             dragHoldY = mouseY - shapes[numShapes - 1].ty;
+             targetX = mouseX - dragHoldX;
+             targetY = mouseY - dragHoldY;
+             timer = setInterval(onTimerTick, 1000 / 30);
+         }
+         window.removeEventListener("mousedown", mouseDownListener, false);
+         window.addEventListener("mouseup", mouseUpListener, false);
+         theCanvas.removeEventListener("touchstart", mouseDownListener, false);
+         theCanvas.addEventListener("touchend", mouseUpListener, false);
 
-     //     //code below prevents the mouse down from having an effect on the main browser window:
-     //     if (evt.preventDefault) {
-     //         evt.preventDefault();
-     //     } //standard
-     //     else if (evt.returnValue) {
-     //         evt.returnValue = false;
-     //     } //older IE
-     //     return false;
-     // }
+         //code below prevents the mouse down from having an effect on the main browser window:
+         if (evt.preventDefault) {
+             evt.preventDefault();
+         } //standard
+         else if (evt.returnValue) {
+             evt.returnValue = false;
+         } //older IE
+         return false;
+     }
 
-     // function mouseMoveListener(evt) {
-     //     evt.preventDefault();
-     //     if (dragging) {
-     //         var mousePos = getMousePos(theCanvas, evt);
-     //         mouseX = mousePos.x;
-     //         mouseY = mousePos.y;
+     function mouseMoveListener(evt) {
+         evt.preventDefault();
+         if (dragging) {
+             var mousePos = getMousePos(theCanvas, evt);
+             mouseX = mousePos.x;
+             mouseY = mousePos.y;
 
-     //         var posX;
-     //         var posY;
-     //         var offSetX = (shapes[numShapes - 1].w - shapes[numShapes - 1].bw) / 2;
-     //         var offSetY = (shapes[numShapes - 1].h - shapes[numShapes - 1].bh) / 2;
-     //         var maxX = theCanvas.width - shapes[numShapes - 1].w + offSetX;
-     //         var maxY = theCanvas.height - shapes[numShapes - 1].h + offSetY;
-     //         posX = mouseX - dragHoldX;
-     //         posX = (posX < -offSetX) ? -offSetX : ((posX > maxX) ? maxX : posX);
-     //         posY = mouseY - dragHoldY;
-     //         posY = (posY < -offSetY) ? -offSetY : ((posY > maxY) ? maxY : posY);
-     //         targetX = posX;
-     //         targetY = posY;
-     //     } else {
-     //         var mousePos = getMousePos(theCanvas, evt);
-     //         mouseX = mousePos.x;
-     //         mouseY = mousePos.y;
-     //         $("#bottleCanvas").removeClass("cursorMove");
-     //         for (var i = 0; i < numShapes; i++) {
-     //             if (hitMouseTest(shapes[i], mouseX, mouseY)) {
-     //                 $("#bottleCanvas").addClass("cursorMove");
-     //             }
-     //         }
-     //     }
-     // }
+             var posX;
+             var posY;
+             var offSetX = (shapes[numShapes - 1].w - shapes[numShapes - 1].bw) / 2;
+             var offSetY = (shapes[numShapes - 1].h - shapes[numShapes - 1].bh) / 2;
+             var maxX = theCanvas.width - shapes[numShapes - 1].w + offSetX;
+             var maxY = theCanvas.height - shapes[numShapes - 1].h + offSetY;
+             posX = mouseX - dragHoldX;
+             posX = (posX < -offSetX) ? -offSetX : ((posX > maxX) ? maxX : posX);
+             posY = mouseY - dragHoldY;
+             posY = (posY < -offSetY) ? -offSetY : ((posY > maxY) ? maxY : posY);
+             targetX = posX;
+             targetY = posY;
+         } else {
+             var mousePos = getMousePos(theCanvas, evt);
+             mouseX = mousePos.x;
+             mouseY = mousePos.y;
+             $("#bottleCanvas").removeClass("cursorMove");
+             for (var i = 0; i < numShapes; i++) {
+                 if (hitMouseTest(shapes[i], mouseX, mouseY)) {
+                     $("#bottleCanvas").addClass("cursorMove");
+                 }
+             }
+         }
+     }
 
-     // function mouseUpListener(evt) {
-     //     evt.preventDefault();
-     //     window.addEventListener("mousedown", mouseDownListener, false);
-     //     window.removeEventListener("mouseup", mouseUpListener, false);
-     //     theCanvas.addEventListener("touchstart", mouseDownListener, false);
-     //     theCanvas.removeEventListener("touchend", mouseUpListener, false);
-     //     if (dragging) {
-     //         dragging = false;
-     //         $(".area").hide();
-     //         clearInterval(timer);
-     //     }
-     // }
+     function mouseUpListener(evt) {
+         evt.preventDefault();
+         window.addEventListener("mousedown", mouseDownListener, false);
+         window.removeEventListener("mouseup", mouseUpListener, false);
+         theCanvas.addEventListener("touchstart", mouseDownListener, false);
+         theCanvas.removeEventListener("touchend", mouseUpListener, false);
+         if (dragging) {
+             dragging = false;
+             $(".area").hide();
+             clearInterval(timer);
+         }
+     }
+
+     function hitMouseTest(target, hitX, hitY) {
+         return ((hitX > target.tx) && (hitX < target.tx + target.w) && (hitY > target.ty) && (hitY < target.ty + target.h));
+     }
+
+     function getMousePos(canvas, evt) {
+         var rect = canvas.getBoundingClientRect();
+         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+             return {
+                 x: evt.targetTouches[0].pageX - rect.left,
+                 y: evt.targetTouches[0].pageY - rect.top
+             };
+         } else {
+             return {
+                 x: evt.clientX - rect.left,
+                 y: evt.clientY - rect.top
+             };
+         }
+     }
+
+     function onTimerTick() {
+         shapes[numShapes - 1].tx = targetX;
+         shapes[numShapes - 1].ty = targetY;
+
+         if ((!dragging) && (Math.abs(shapes[numShapes - 1].x - targetX) < 0.1) && (Math.abs(shapes[numShapes - 1].y - targetY) < 0.1)) {
+             shapes[numShapes - 1].tx = targetX;
+             shapes[numShapes - 1].ty = targetY;
+             clearInterval(timer);
+         }
+         drawScreen();
+     }
 
  });
